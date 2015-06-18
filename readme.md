@@ -37,7 +37,7 @@ if ($distance > 0) {
 
 ## Todo
 
-Ideas for future versions
+Ideas for future versions.
 
-[ ] Better error handeling, checking rate limit, etc
-[ ] Show a map with a line plotted between two points
+- [ ] Better error handeling, checking rate limit, etc
+- [ ] Show a map with a line plotted between two points
