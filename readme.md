@@ -1,6 +1,6 @@
 # DistanceMatrix PHP API Wrapper
 
-Very simple API Wrapper for Google's DistanceMatrix API. Enter two addresses and the class returns the distance between them in meter.
+Very simple API Wrapper for Google's DistanceMatrix API. Enter two addresses and the class returns the distance between them in meter. Alternatively use Google Static Map API to generate a map with a line plotted between two adresses.
 
 
 ## Basic usage
@@ -33,6 +33,20 @@ if ($distance > 0) {
 }
 ````
 
+## Generating a map
+An API key is not required for this. If you do supply a key make sure this key has premission to use the Static Map API.
+````PHP
+$DistanceMatrix = new MartijnOud\DistanceMatrix();
+$image = $DistanceMatrix->map(array(
+	'origins' => 'Prof. van der Waalsstraat 2 Alkmaar', // required
+	'destinations' => 'Amsterdam', // required
+	'size' => '728x200'
+	));
+if ($image) {
+	echo '<img src="'.$image.'" />';
+}
+````
+
 
 
 ## Todo
@@ -40,4 +54,4 @@ if ($distance > 0) {
 Ideas for future versions.
 
 - [ ] Better error handeling, checking rate limit, etc
-- [ ] Show a map with a line plotted between two points
+- [x] Show a map with a line plotted between two points
