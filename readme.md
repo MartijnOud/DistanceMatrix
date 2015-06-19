@@ -46,6 +46,7 @@ if ($image) {
 	echo '<img src="'.$image.'" />';
 }
 ````
+![google-static-map](https://cloud.githubusercontent.com/assets/1292436/8251065/aba708ce-1679-11e5-8f26-95f8627fcb63.png)
 
 
 
