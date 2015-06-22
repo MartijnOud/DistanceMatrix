@@ -9,6 +9,6 @@
             "email": "martijn@inktweb.nl"
         }
     ],
-    "minimum-stability": "stable",
+    "minimum-stability": "dev",
     "require": {}
 }
