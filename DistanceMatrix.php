@@ -5,7 +5,7 @@
  * Generate a static image with a line plotted between using Google Static Map API
  *
  * @link https://github.com/MartijnOud/DistanceMatrix
- * @version 1.1
+ * @version dev
  */
 namespace MartijnOud;
 
@@ -48,13 +48,14 @@ class DistanceMatrix
 
         // Required variables
         if (empty($data['origins']) OR empty($data['destinations']) OR empty($this->key)) {
-            trigger_error("Not all required parameters are set", E_USER_ERROR);
+            throw new \Exception('Not all required parameters are set.');
             exit();
         }
 
         $strUrl = "https://maps.googleapis.com/maps/api/distancematrix/json?origins=".urlencode($data['origins'])."&destinations=".urlencode($data['destinations'])."&mode=".$data['mode']."&language=".$data['language']."&key=".$this->key;
         $response = $this->call($strUrl);
 
+        // Return distance or false if nothing found (or other error)
         if ($response->status == "OK") {
             return $response->rows[0]->elements[0]->distance->value;
         } else {
@@ -76,7 +77,7 @@ class DistanceMatrix
      *        zoom = 0-20
      *        format = png (default)
      *        maptype =  roadmap (default), satellite, terrain, hybrid
-     * @return string image url OR false
+     * @return string image url
      */
     public function map($data = array())
     {
@@ -117,10 +118,11 @@ class DistanceMatrix
         }
 
         if (@!getimagesize($url)) {
-            return false;
-        } else {
-            return $url;
+            throw new \Exception('No valid image found.');
+            exit();
         }
+
+        return $url;
     }
 
     /**
