@@ -1,0 +1,14 @@
+{
+    "name": "martijnoud/distancematrix",
+    "description": "API wrapper to get the distance between two addresses using Google's Distance Matrix API",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Martijn Oud",
+            "email": "martijn@inktweb.nl"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {}
+}
