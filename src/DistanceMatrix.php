@@ -5,7 +5,7 @@
  * Generate a static image with a line plotted between using Google Static Map API
  *
  * @link https://github.com/MartijnOud/DistanceMatrix
- * @version 1.1
+ * @version 1.2
  */
 namespace MartijnOud\DistanceMatrix;
 
@@ -35,7 +35,7 @@ class DistanceMatrix
      * @return int distance in meters OR false
      */
     public function distance($data = array())
-    {   
+    {
         // Prepare API call
         // Set default variables
         if (empty($data['mode'])) {
