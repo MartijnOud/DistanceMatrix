@@ -9,6 +9,11 @@
             "email": "martijn@inktweb.nl"
         }
     ],
-    "minimum-stability": "dev",
+    "minimum-stability": "stable",
+    "autoload": {
+        "psr-4": {
+            "MartijnOud\\DistanceMatrix\\": "src"
+        }
+    },
     "require": {}
 }
