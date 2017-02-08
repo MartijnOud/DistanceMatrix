@@ -7,7 +7,7 @@
  * @link https://github.com/MartijnOud/DistanceMatrix
  * @version 1.1
  */
-namespace MartijnOud;
+namespace MartijnOud\DistanceMatrix;
 
 class DistanceMatrix
 {
